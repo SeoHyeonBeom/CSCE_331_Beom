@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualifications</title>
+    <link rel="stylesheet" href="style1.css" id="pagestyle">
+</head>
+<body>
+    <div class="style-switcher">
+        <button class="switch-btn" onclick="switchStyle()">Switch Style</button>
+    </div>
+    
+    <header>
+        <h1>Qualifications</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="qualifications.html">Qualifications</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="genai.html">AI-Generated</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Coding Languages:</strong> Python, C++, C, Java, Haskell, JavaScript, HTML, CSS, R</li>
+                <li><strong>Languages:</strong> Korean(Native), English(Proficient)</li>
+            </ul>
+        </div>
+
+        <div class="skills" style="margin-top: 2rem;">
+            <h2>Technical Area of Interest</h2>
+            <p>
+                When I first heard about coding, I was 12 years old. Even for me, who is not interested at all, I have heard that coding is the most essential these days. At that time, I didn't ponder about what to do in my future, so I just ignored and forgot about it.
+            </p>
+            <p>
+                A few years later, at the age of 16, I started coding at the advice of my mother. Rather than going to the academy, I tried to be interested in coding at first. The result was a great success. I was more interested in coding than I thought. I decided to go to a coding academy for deeper knowledge about it. I was excited about the fact that I learn from teachers who are more systematic and supportive than when I did it alone. When I heard that I was good at it, I was happy as if I were flying away.
+            </p>
+            <p>
+                Around that time, I remembered an AI in my memory. It is called Sophia which visited Korea in 2018. At that time, I was surprised by the behavior and appearance that were almost similar to humans, and on the other hand, I felt very unpleasant. That's when I first came to understand the word "unpleasant valley''. Many other people also felt uncomfortable and unpleasant. When I learned coding and got interested in AI, I arrived at one conclusion while facing Sophia again. ‘Can I make an AI that is not unpleasant and only helps humans?’
+            </p>
+            <p>
+                Many people have hostility towards AI because they are afraid of losing their jobs to AI. My current interest lies in developing AI that augments human capabilities rather than replacing them. I'm particularly drawn to "collaborative AI" - systems that work alongside humans, enhancing their abilities while maintaining a comfortable interaction dynamic. Through my computer science studies, I aim to develop AI solutions that bridge the gap between human comfort and technological advancement.
+            </p>
+            
+        </div>
+
+        <!-- <div class="skills" style="margin-top: 2rem;">
+            <h2>Resume</h2>
+            <a href="resume.pdf" style="color: #8ea4b8; text-decoration: underline;" target="_blank">Download My Resume</a>
+        </div> -->
+        <div class="skills" style="margin-top: 2rem;">
+            <h2>Resume</h2>
+            <iframe 
+                src="https://drive.google.com/file/d/17Flg8JV2RoA3i1PnaGkujRCA-20z7-fU/preview" 
+                width="100%" 
+                height="400px" 
+                style="border: none;">
+            </iframe>
+            <p>
+                <a href="https://drive.google.com/file/d/17Flg8JV2RoA3i1PnaGkujRCA-20z7-fU/view" target="_blank" style="color: #8ea4b8; text-decoration: underline;">
+                    Go to My Resume
+                </a>
+            </p>
+        </div>
+        
+    </main>
+
+    <!-- Style 2 Navigation Bar -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+        <a href="qualifications.html" class="nav-item active">Qualification</a>
+        <a href="service.html" class="nav-item">Services</a>
+        <a href="genai.html" class="nav-item">AI-Gen</a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Seo Hyeon Beom</p>
+    </footer>
+
+    <script>
+        function switchStyle() {
+            var styleSheet = document.getElementById('pagestyle');
+            var currentStyle = styleSheet.getAttribute('href');
+            
+            if(currentStyle === 'style1.css') {
+                styleSheet.setAttribute('href', 'style2.css');
+                localStorage.setItem('currentStyle', 'style2.css');
+            } else {
+                styleSheet.setAttribute('href', 'style1.css');
+                localStorage.setItem('currentStyle', 'style1.css');
+            }
+        }
+    
+        window.addEventListener('DOMContentLoaded', function() {
+            var styleSheet = document.getElementById('pagestyle');
+            var savedStyle = localStorage.getItem('currentStyle');
+            
+            if(savedStyle) {
+                styleSheet.setAttribute('href', savedStyle);
+            }
+        });
+    </script>
+</body>
+</html>
