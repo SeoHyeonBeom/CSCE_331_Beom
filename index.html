@@ -4,131 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Website</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e3e7ec; 
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        header {
-            background-color: #8ea4b8; 
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            flex: 0 0 auto;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            background-color: #8ea4b8; /* Match Sierra blue */
-            padding: 0.5rem 1rem; /* Add spacing */
-            border-radius: 5px; /* Add slight rounding */
-        }
-
-        nav ul li a:hover {
-            background-color: #738a9d; /* Slightly darker for hover effect */
-        }
-
-        main {
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            padding: 1rem;
-        }
-
-        .about-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 65%;
-            border-radius: 10px;
-        }
-
-        .about-section img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #8ea4b8;
-        }
-
-        .about-description {
-            flex: 1;
-            margin-left: 2rem;
-        }
-
-        .folders {
-            display: flex;
-            justify-content: space-evenly;
-            width: 70%;
-            gap: 1rem;
-        }
-
-        .folder {
-            background-color: #8ea4b8;
-            color: white;
-            width: 180px;
-            height: 150px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .folder:hover {
-            background-color: #738a9d; /* Slightly darker for hover effect */
-
-        }
-
-        footer {
-            text-align: center;
-            padding: 0.1rem;
-            background-color: #8ea4b8;
-            color: white;
-            flex: 0 0 auto;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style1.css" id="pagestyle">
 </head>
 <body>
+    <div class="style-switcher">
+        <button class="switch-btn" onclick="switchStyle()">Switch Style</button>
+    </div>
+
+    <!-- Style 1 Header -->
     <header>
-        <h1>Welcome to My Professional Portfolio</h1>
+        <h1>Seo Hyeon Beom</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -142,24 +27,61 @@
 
     <main>
         <section class="about-section">
-            <img src="profile.jpg" alt="My Picture">
+            <img src="profile.JPG" alt="My Picture">
             <div class="about-description">
                 <h2>About Me</h2>
-                <p>Description about myself goes here.</p>
+                <h3>Major : Computer Science</h3>
+                <h3>Minor : Mathematics</h3>
+                <h3>Class of 2026</h3>
+                <p>Hello! I'm Seo Hyeon Beom, a Computer Science undergraduate at Texas A&M University, 
+                    with minors in Mathematics. 
+                </p>
             </div>
         </section>
 
         <div class="folders">
-            <div class="folder">Portfolio</div>
-            <div class="folder">Qualifications</div>
-            <div class="folder">Services</div>
-            <div class="folder">AI-Generated</div>
+            <a href="portfolio.html" class="folder">Portfolio</a>
+            <a href="qualifications.html" class="folder">Qualifications</a>
+            <a href="service.html" class="folder">Services</a>
+            <a href="genai.html" class="folder">AI-Generated</a>
         </div>
     </main>
 
+    <!-- Style 2 Navigation Bar -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+        <a href="qualifications.html" class="nav-item">Qualification</a>
+        <a href="service.html" class="nav-item">Services</a>
+        <a href="genai.html" class="nav-item">AI-Gen</a>
+    </nav>
+
     <footer>
-        <p>&copy; 2025 Your Name | Hosted on people.tamu.edu</p>
+        <p>&copy; 2025 Seo Hyeon Beom</p>
     </footer>
+
+    <script>
+        function switchStyle() {
+            var styleSheet = document.getElementById('pagestyle');
+            var currentStyle = styleSheet.getAttribute('href');
+            
+            if(currentStyle === 'style1.css') {
+                styleSheet.setAttribute('href', 'style2.css');
+                localStorage.setItem('currentStyle', 'style2.css');
+            } else {
+                styleSheet.setAttribute('href', 'style1.css');
+                localStorage.setItem('currentStyle', 'style1.css');
+            }
+        }
+    
+        window.addEventListener('DOMContentLoaded', function() {
+            var styleSheet = document.getElementById('pagestyle');
+            var savedStyle = localStorage.getItem('currentStyle');
+            
+            if(savedStyle) {
+                styleSheet.setAttribute('href', savedStyle);
+            }
+        });
+    </script>
 </body>
 </html>
-
