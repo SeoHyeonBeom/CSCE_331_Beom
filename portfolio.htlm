@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style1.css" id="pagestyle">
+</head>
+<body>
+    <div class="style-switcher">
+        <button class="switch-btn" onclick="switchStyle()">Switch Style</button>
+    </div>
+
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="qualifications.html">Qualifications</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="genai.html">AI-Generated</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Technical Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Moonja Chatroom</h3>
+                <p>A simple private chatroom for anyone who has the link.</p>
+                <div class="project-links">
+                    <a href="https://github.com/SeoHyeonBeom/Munja" target="_blank">GitHub Link</a>
+                </div>
+            </div>
+            <div class="project">
+                <h3>Apple Quality Prediction</h3>
+                <p>Built a predictive model with 89.75% accuracy, analyzing attributes like size, sweetness, and acidity.</p>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1nTCIOKl_LW_8BqWIEVV9ycGdbaZJRj9a/view?usp=drive_link" target="_blank">Project Link</a>
+                </div>
+            </div>
+            <div class="project">
+                <h3>Airbnb Clone Project</h3>
+                <p>Developed an Amenity Detection system based on TensorFlow Object Detection API.</p>
+                <div class="project-links">
+                    <a href="https://github.com/SeoHyeonBeom/SeoHyeonBeom.github.io" target="_blank">GitHub Link</a>
+                    <a href="https://seohyeonbeom.github.io/2021-11-27-airbnb-clone-project-amenity-detection/" target="_blank">Project Link</a>
+                </div>
+            </div>
+        </div>
+        <section class="find-me">
+            <h2>Find Me</h2>
+            <div class="social-links">
+                <a href="https://github.com/SeoHyeonBeom" target="_blank" class="social-link">
+                    <img src="github.png" alt="GitHub" class="social-icon">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/seo-hyeon-beom-0052962a3/" target="_blank" class="social-link">
+                    <img src="linked.png" alt="LinkedIn" class="social-icon">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://instagram.com/seohyeoniiiiiiee" target="_blank" class="social-link">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="portfolio.html" class="nav-item active">Portfolio</a>
+        <a href="qualifications.html" class="nav-item">Qualification</a>
+        <a href="service.html" class="nav-item">Services</a>
+        <a href="genai.html" class="nav-item">AI-Gen</a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Seo Hyeon Beom</p>
+    </footer>
+
+    <script>
+        function switchStyle() {
+            var styleSheet = document.getElementById('pagestyle');
+            var currentStyle = styleSheet.getAttribute('href');
+            
+            if(currentStyle === 'style1.css') {
+                styleSheet.setAttribute('href', 'style2.css');
+                localStorage.setItem('currentStyle', 'style2.css');
+            } else {
+                styleSheet.setAttribute('href', 'style1.css');
+                localStorage.setItem('currentStyle', 'style1.css');
+            }
+        }
+    
+        // 페이지 로드시 저장된 스타일 적용
+        window.addEventListener('DOMContentLoaded', function() {
+            var styleSheet = document.getElementById('pagestyle');
+            var savedStyle = localStorage.getItem('currentStyle');
+            
+            if(savedStyle) {
+                styleSheet.setAttribute('href', savedStyle);
+            }
+        });
+    </script>
+</body>
+</html>
