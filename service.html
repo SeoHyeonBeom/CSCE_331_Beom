@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="style1.css" id="pagestyle">
+
+</head>
+<body>
+    <div class="style-switcher">
+        <button class="switch-btn" onclick="switchStyle()">Switch Style</button>
+    </div>
+
+    <header>
+        <h1>Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="qualifications.html">Qualifications</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="genai.html">AI-Generated</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="service">
+            <h2>KSEA Member</h2>
+            <p>Active involvement in promoting Korean culture and community engagement.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/tamuksea/" target="_blank" class="social-link">
+                    <img src="instagram.png" alt="KSEA Instagram" class="social-icon">
+                    <span>KSEA Instagram</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="service">
+            <h2>Women in Engineering (WE) Ambassador</h2>
+            <p>Organized and hosted events to empower women in engineering.</p>
+        </div>
+
+        <div class="service">
+            <h2>Teaching Assistant</h2>
+            <p>Guided and taught high school students, focusing on STEM subjects.
+            </p>
+            <div>
+                <a href="http://nccs.or.kr/?ckattempt=1" target="_blank" class="social-link">
+                    <span>Link</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+        <a href="qualifications.html" class="nav-item">Qualification</a>
+        <a href="service.html" class="nav-item active">Services</a>
+        <a href="genai.html" class="nav-item">AI-Gen</a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Seo Hyeon Beom</p>
+    </footer>
+
+    <script>
+        function switchStyle() {  
+            var styleSheet = document.getElementById('pagestyle');
+            var currentStyle = styleSheet.getAttribute('href');
+            if(currentStyle === 'style1.css') {
+                styleSheet.setAttribute('href', 'style2.css');
+                localStorage.setItem('currentStyle', 'style2.css');
+            } else {
+                styleSheet.setAttribute('href', 'style1.css');
+                localStorage.setItem('currentStyle', 'style1.css');
+            }
+        }
+    
+        window.addEventListener('DOMContentLoaded', function() {
+            var styleSheet = document.getElementById('pagestyle');
+            var savedStyle = localStorage.getItem('currentStyle');
+            
+            if(savedStyle) {
+                styleSheet.setAttribute('href', savedStyle);
+            }
+        });
+    </script>
+</body>
+</html>
