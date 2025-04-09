@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"<Unnamed>","c":"test","l":"getImage(URL, String)","u":"getImage(java.net.URL,java.lang.String)"},{"p":"<Unnamed>","c":"test","l":"test()","u":"%3Cinit%3E()"}];updateSearchResults();
