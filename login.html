@@ -22,7 +22,7 @@
   <h2>Login</h2>
   <form id="loginForm">
     <label>Email:</label><br>
-    <input type="email" id="email" name="email" required><br>
+    <input type="text" id="email" name="email" required>
 
     <label>Password:</label><br>
     <input type="password" id="password" name="password" required minlength="8"><br>
@@ -31,18 +31,17 @@
   </form>
 
   <script>
-    // 입력 필터링 (스크립트 제거, 따옴표 제거)
     function sanitize(input) {
       return input.replace(/<[^>]*>?/gm, '').replace(/['"]/g, '');
     }
 
     document.getElementById('loginForm').addEventListener('submit', function (e) {
-      e.preventDefault(); // 실제 제출 방지
+      e.preventDefault(); // prevent actual form submission
 
       const email = sanitize(document.getElementById('email').value);
       const password = sanitize(document.getElementById('password').value);
 
-      // 가짜 로그인 계정 (하드코딩)
+      // fake login account for testing
       const validEmail = 'test@example.com';
       const validPassword = 'test1234';
 
