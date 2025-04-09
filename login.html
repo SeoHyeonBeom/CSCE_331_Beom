@@ -3,31 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Login - Seo Hyeon Beom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    input {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 250px;
+    }
+    button {
+      padding: 6px 12px;
+    }
+  </style>
 </head>
 <body>
   <h2>Login</h2>
-  <form id="loginForm" method="POST" action="/login">
+  <form id="loginForm">
     <label>Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" required><br>
 
     <label>Password:</label><br>
-    <input type="password" id="password" name="password" required minlength="8"><br><br>
+    <input type="password" id="password" name="password" required minlength="8"><br>
 
     <button type="submit">Login</button>
   </form>
 
   <script>
-    // Input sanitization function
+    // 입력 필터링 (스크립트 제거, 따옴표 제거)
     function sanitize(input) {
       return input.replace(/<[^>]*>?/gm, '').replace(/['"]/g, '');
     }
 
     document.getElementById('loginForm').addEventListener('submit', function (e) {
-      const email = document.getElementById('email');
-      const password = document.getElementById('password');
+      e.preventDefault(); // 실제 제출 방지
 
-      email.value = sanitize(email.value);
-      password.value = sanitize(password.value);
+      const email = sanitize(document.getElementById('email').value);
+      const password = sanitize(document.getElementById('password').value);
+
+      // 가짜 로그인 계정 (하드코딩)
+      const validEmail = 'test@example.com';
+      const validPassword = 'test1234';
+
+      if (email === validEmail && password === validPassword) {
+        alert('✅ Login successful! Welcome back.');
+      } else {
+        alert('❌ Invalid credentials. Try again.');
+      }
     });
   </script>
 </body>
